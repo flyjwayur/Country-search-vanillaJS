@@ -63,6 +63,7 @@ button:focus{
 .searchInput{
     width: 70%;
     height: 2rem;
+    color : green;
 }
 
 .searchInput:focus{
