@@ -44,14 +44,14 @@ Button{
 
 .startWordBtn{
     width : 7rem;
-    height: 2rem;
+    height: 2.5rem;
     margin : 2rem 1rem;
     font-size:  1rem; 
 }
 
 .anyWordBtn{
     width: 11rem;
-    height: 2rem;
+    height: 2.5rem;
     margin : 2rem 1rem;
     font-size:  1rem; 
 }
@@ -64,6 +64,8 @@ button:focus{
     width: 70%;
     height: 2rem;
     color : green;
+    text-align: center;
+    font-size : 1rem;
 }
 
 .searchInput:focus{
