@@ -1,0 +1,91 @@
+*{
+    box-sizing : border-box;
+    margin : 0; 
+    padding : 0;
+}
+
+.wrapper{
+    width : 90%;
+    margin : 4rem auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.top{
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.totalNumber{
+    margin : 2rem;
+}
+
+.totalNum{
+    color: #0ABDA0;
+    padding-left : 0.5rem;
+    font-weight: 800;
+    font-size : 1.3rem;
+}
+
+.filteredNum{
+    color: #f05837;
+    padding-left : 0.5rem;
+    font-weight: 800;
+    font-size : 1.6rem;
+}
+
+.buttonWrapper{
+  display: flex;
+}
+
+Button{
+    background-color:rgba(191,157,122,0.5);
+}
+
+.startWordBtn{
+    width : 7rem;
+    height: 2rem;
+    margin : 2rem 1rem;
+    font-size:  1rem; 
+}
+
+.anyWordBtn{
+    width: 11rem;
+    height: 2rem;
+    margin : 2rem 1rem;
+    font-size:  1rem; 
+}
+
+button:focus{
+    outline: none;
+}
+
+.searchInput{
+    width: 70%;
+    height: 2rem;
+}
+
+.searchInput:focus{
+    outline: none;
+    text-align: center;
+    font-size : 1rem;
+}
+
+.countryList{
+    width : 80%;
+    height: 100%;
+    margin : 5rem auto;
+    display : flex;
+    flex-direction : column;
+    align-content: center;
+    justify-items: center;
+    background-color:rgba(191,157,122,0.2);
+}
+
+.eachCountry{
+    width : 90%;
+    height: 110px;
+    margin: 1rem auto; 
+    text-align : center; 
+    padding-top: 45px;
+}
