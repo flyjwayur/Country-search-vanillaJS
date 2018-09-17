@@ -75,14 +75,13 @@ button:focus{
 }
 
 .countryList{
-    width : 80%;
-    height: 100%;
+    width : 90%;
     margin : 5rem auto;
     display : flex;
     flex-direction : column;
     align-content: center;
     justify-items: center;
-    background-color:rgba(191,157,122,0.2);
+    background-color:#fff;
 }
 
 .eachCountry{

@@ -6,13 +6,49 @@ const countTotalNumCountries = (arr)=>{
 
 countTotalNumCountries(countries);
 
-const hexaGenerator = () => {
-    return "#" + Math.floor(Math.random() * 16777215).toString(16);
-};
+const hexaColor = function() {
+    let numbersLetters = '0123456789abcdef'.split('');
+    let hexaNumbers = '';
+    let randIndex;
+    for (let i = 0; i < 6; i++) {
+    randIndex = Math.floor(Math.random() * numbersLetters.length);
+    hexaNumbers += numbersLetters[randIndex];
+    }
+    return '#' + hexaNumbers;
+    };
 
+
+/* const hexaGenerator = () => {
+    return "#" + Math.floor(Math.random() * 17895697).toString(16);
+    //return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}; */
+
+const displayCountriesDivs = (arr)=>{
+    let countryList = document.querySelector('.countryList');
+    countryList.innerHTML = "";
+    arr.forEach(country =>{
+        console.log(country);
+        let div = document.createElement('div');
+        div.textContent = country;
+        div.classList.add('eachCountry');
+        div.style.backgroundColor = hexaColor();
+        countryList.appendChild(div);
+    })
+}
+
+
+
+/*
+const checkMaxInput = () => {
+    (searchInput.length === 1){
+
+    }
+}*/
+
+let searchInput = document.querySelector('.searchInput').value;    
+let filteredResult = document.querySelector('.filteredResult');
 const searchCountries= (arr, str) =>{
-        let searchInput = document.querySelector('.searchInput').value;
-        let filteredResult = document.querySelector('.filteredResult');
+    
 
         console.log("str", str);
         let numbers= /[0-9]/g;
@@ -41,23 +77,12 @@ const searchCountries= (arr, str) =>{
                 filteredResult.insertAdjacentHTML('afterbegin', markupForResult);
                 console.log("filtered By some words",filteredCountries);
             }          
-
-            let countryList = document.querySelector('.countryList');
-            countryList.innerHTML = "";
-            filteredCountries.forEach((country)=>{
-                console.log(country);
-                let div = document.createElement('div');
-                div.textContent = country;
-                div.classList.add('eachCountry');
-                div.style.background = hexaGenerator();
-                countryList.appendChild(div);
-            })
-            document.querySelector('.searchInput').value =""; //Why it's moving to left?
+            displayCountriesDivs(filteredCountries); 
+            document.querySelector('.searchInput').value =""; 
         }else{
             alert("Please type an first Letter/words to search :)");
         }
  }
-
 
 const startWordBtn = document.querySelector('.startWordBtn');
 startWordBtn.addEventListener("click", ()=>{
