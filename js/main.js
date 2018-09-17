@@ -13,29 +13,32 @@ const hexaGenerator = () => {
 const searchCountries= (arr, str) =>{
         let searchInput = document.querySelector('.searchInput').value;
         let filteredResult = document.querySelector('.filteredResult');
-    
+
         console.log("str", str);
         let numbers= /[0-9]/g;
     
+        filteredResult.innerHTML = "";
         if(!numbers.test(searchInput) && (searchInput !== "")){
             console.log(searchInput);
             let filteredCountries;
-            let filteredNum = document.createElement('span');
-
+            let markupForResult;
+           
             if(str === "firstLetter"){
                    filteredCountries = arr.filter((country)=>{
                     return country.startsWith(searchInput.toUpperCase());
                 });
-                filteredNum.style.color = "green";
-                filteredNum = filteredCountries.length;
-                filteredResult.textContent = `Countries starting ${searchInput} with are ${filteredNum}`;
+
+                markupForResult = `Countries starting <span>${searchInput}</span> with are <span>${filteredCountries.length}<span>`;
+                filteredResult.insertAdjacentHTML('afterbegin', markupForResult);
                 console.log("filtered By First Letter",filteredCountries);
+
             }else if(str === "anyWord"){
                   filteredCountries= arr.filter((country)=>{
                     return country.includes(searchInput);
                 });
-                filteredNum = filteredCountries.length;
-                filteredResult.textContent = `Countries contain ${searchInput} are ${filteredNum}`;
+
+                const markupForResult = `Countries contain <span>${searchInput}</span> are <span>${filteredCountries.length}</span>`;
+                filteredResult.insertAdjacentHTML('afterbegin', markupForResult);
                 console.log("filtered By some words",filteredCountries);
             }          
 

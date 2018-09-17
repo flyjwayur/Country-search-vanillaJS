@@ -92,3 +92,8 @@ button:focus{
     text-align : center; 
     padding-top: 45px;
 }
+
+span{
+    color:#f05837;
+    font-weight : 800;
+}
