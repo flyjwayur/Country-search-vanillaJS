@@ -6,6 +6,7 @@ const countTotalNumCountries = (arr)=>{
 
 countTotalNumCountries(countries);
 
+/*
 const hexaColor = function() {
     let numbersLetters = '0123456789abcdef'.split('');
     let hexaNumbers = '';
@@ -16,12 +17,11 @@ const hexaColor = function() {
     }
     return '#' + hexaNumbers;
     };
+*/
 
-
-/* const hexaGenerator = () => {
-    return "#" + Math.floor(Math.random() * 17895697).toString(16);
-    //return "#" + Math.floor(Math.random() * 16777215).toString(16);
-}; */
+const hexaGenerator = () => {
+    return `#${Math.floor(Math.random() * 16777216).toString(16).padStart(6, '0')}`
+};
 
 const displayCountriesDivs = (arr)=>{
     let countryList = document.querySelector('.countryList');
@@ -31,24 +31,24 @@ const displayCountriesDivs = (arr)=>{
         let div = document.createElement('div');
         div.textContent = country;
         div.classList.add('eachCountry');
-        div.style.backgroundColor = hexaColor();
+        div.style.backgroundColor = hexaGenerator();
         countryList.appendChild(div);
     })
 }
 
-
-
+//https://www.mediacollege.com/internet/javascript/form/limit-characters.html
+//key down and up!
 /*
-const checkMaxInput = () => {
-    (searchInput.length === 1){
-
+const checkMaxInput = (searchChar) => {
+    console.log("test", searchChar);
+    if(searchChar.value.length > 1){
+        searchChar.value = searchChar.value.substring(0, 1);
     }
 }*/
 
-let searchInput = document.querySelector('.searchInput').value;    
-let filteredResult = document.querySelector('.filteredResult');
 const searchCountries= (arr, str) =>{
-    
+    let searchInput = document.querySelector('.searchInput').value;    
+    let filteredResult = document.querySelector('.filteredResult');
 
         console.log("str", str);
         let numbers= /[0-9]/g;
@@ -60,6 +60,7 @@ const searchCountries= (arr, str) =>{
             let markupForResult;
            
             if(str === "firstLetter"){
+                   //checkMaxInput(searchInput);
                    filteredCountries = arr.filter((country)=>{
                     return country.startsWith(searchInput.toUpperCase());
                 });
