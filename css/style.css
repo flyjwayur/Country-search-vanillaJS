@@ -76,11 +76,7 @@ button:focus{
 
 .countryList{
     width : 90%;
-    margin : 5rem auto;
-    display : flex;
-    flex-direction : column;
-    align-content: center;
-    justify-items: center;
+    margin : 5rem auto;    
     background-color:#fff;
 }
 
