@@ -80,13 +80,16 @@ const searchByAnyWords = (arr, searchWord) => {
 
 // listen user input in search field
 elements.search.addEventListener("keyup", e => {
-  const searchWords = document.querySelector(".searchInput").value;
+  const searchWords = document.querySelector(".searchInput");
+
   if (inputValidation(e.target)) {
-    if (elements.inputAnyWord.checked) {
-        searchByAnyWords(countries, searchWords.toLowerCase());
-        } else {
-        searchByStartWord(countries, searchWords.toLowerCase());
-        }
+    if (elements.inputStartWord.checked) {
+        searchWords.maxLength = 1;
+        searchByStartWord(countries, searchWords.value.toLowerCase());   
+    }else{
+        searchWords.maxLength = 100;
+        searchByAnyWords(countries, searchWords.value.toLowerCase());   
+    }
   } else if(!inputValidation(e.target)) {
     alert("Please type the letters :D");  
   }
