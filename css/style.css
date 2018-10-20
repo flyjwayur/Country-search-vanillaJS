@@ -1,94 +1,142 @@
-*{
-    box-sizing : border-box;
-    margin : 0; 
-    padding : 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.wrapper{
-    width : 90%;
-    margin : 4rem auto;
-    font-family: 'Montserrat', sans-serif;
+:root{
+    /*color*/
+    --emerald-Green :#0abda0;
+    --light-brown : rgba(191, 157, 122, 0.5);
+    --light-yellow : #ffffe6;
+    --dark-brown : rgb(43, 29, 14, 1);
 }
 
-.top{
-    display : flex;
+
+/******* Wrapper & Section *******/
+.wrapper {
+  width: 100%;
+  margin: 4rem auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.title{
+ font-size : 2rem;
+ font-weight: 900;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-yellow);
+  padding-top: 3rem;
+}
+
+.searchSection{
+    display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--light-yellow);
+    padding-bottom : 3rem;
 }
 
-.totalNumber{
-    margin : 2rem;
+
+/******* Header *******/
+.totalNumber {
+  margin: 2rem;
 }
 
-.totalNum{
-    color: #0ABDA0;
-    padding-left : 0.5rem;
-    font-weight: 800;
-    font-size : 1.3rem;
+.totalNum {
+  color: var(--emerald-Green);
+  padding-left: 0.5rem;
+  font-weight: 800;
+  font-size: 1.3rem;
 }
 
-.filteredNum{
-    color: #f05837;
-    padding-left : 0.5rem;
-    font-weight: 800;
-    font-size : 1.6rem;
+.filteredNum {
+  color: #f05837;
+  padding-left: 0.5rem;
+  font-weight: 800;
+  font-size: 1.6rem;
 }
 
-.buttonWrapper{
+
+/****** Search section *******/
+.radioBtnWrapper {
   display: flex;
+  margin: 1rem;
 }
 
-Button{
-    background-color:rgba(191,157,122,0.5);
+input[type="radio"] {
+  display: none;
 }
 
-.startWordBtn{
-    width : 7rem;
-    height: 2.5rem;
-    margin : 2rem 1rem;
-    font-size:  1rem; 
+input:focus {
+  outline: none;
 }
 
-.anyWordBtn{
-    width: 11rem;
-    height: 2.5rem;
-    margin : 2rem 1rem;
-    font-size:  1rem; 
-}
-
-button:focus{
-    outline: none;
-}
-
-.searchInput{
-    width: 70%;
-    height: 2rem;
-    color : green;
+.radioBtnLabel{
+    display: inline-block;
+    width: 10rem;
+    background-color: var(--light-brown);
+    padding: 1.1rem 0;
+    margin: 0.5rem;
+    box-shadow: 3px 5px 5px #ccc;
+    letter-spacing: 2px;
     text-align: center;
-    font-size : 1rem;
+    cursor : pointer;
+    border-radius: 3px;
 }
 
-.searchInput:focus{
-    outline: none;
-    text-align: center;
-    font-size : 1rem;
+.radioBtnLabel:hover{
+    background-color: rgba(191, 157, 122, 1);
 }
 
-.countryList{
-    width : 90%;
-    margin : 5rem auto;    
-    background-color:#fff;
+input[type="radio"]:checked + .radioBtnLabel{
+    background-color: var(--dark-brown);
+    color: #ccc;
 }
 
-.eachCountry{
-    width : 90%;
-    height: 110px;
-    margin: 1rem auto; 
-    text-align : center; 
-    padding-top: 45px;
+.searchInput {
+  width: 70%;
+  height: 2rem;
+  color: var(--emerald-Green);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1.3rem 0;
+  border: 2.5px solid var(--light-brown);
+  margin-top : 1rem;
 }
 
-span{
-    color:#f05837;
-    font-weight : 800;
+.searchInput:focus {
+  outline: none;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
+/******* Result Section *******/
+.resultSection {
+  width: 100%;
+  margin: 5rem auto;
+  background-color: #fff;
+}
+
+.eachCountry {
+  width: 90%;
+  height: 110px;
+  margin: 1rem auto;
+  text-align: center;
+  padding-top: 45px;
+  color: #ccc;
+  font-weight: 700;
+  font-size : 1.2rem;
+  line-height: 1.2rem;
+  text-shadow: 1px 2px 2px var(--dark-brown);
+}
+
+.resultSpan{
+    color: #f05837;
+    font-weight: 800;
 }

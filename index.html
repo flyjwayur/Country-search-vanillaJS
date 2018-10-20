@@ -12,17 +12,29 @@
 
 <body>
     <div class="wrapper">
-        <div class="top">
-            <h1>World Countries List</h1>
+        <header class="headerSection">
+            <h1 class="title">World Countries List</h1>
             <p class="totalNumber">Total number of countries <span class="totalNum"></span></p>
             <p class="filteredResult"></p>
-            <div class="buttonWrapper"> 
-                <button class="startWordBtn"> Starting word </button>
-                <button class="anyWordBtn"> Search with any word </button>
-            </div>
-            <input class="searchInput" type="text" placeholder="Search Countries :D"/>
-        </div>
-        <div class="countryList"></div>
+        </header>
+        <section class="searchSection">
+            <form name="searchForm" class="searchForm">
+                <div class="radioBtnWrapper">
+                    <div class="startWordContainer">
+                        <input type="radio" id="startWord" name="radioBtn">
+                        <label for="startWord" class="radioBtnLabel">Starting Word</label>
+                    </div>
+                    <div class="anyWordContainer">
+                        <input type="radio" id="anyWord" name="radioBtn">
+                        <label for="anyWord" class="radioBtnLabel">Any Word</label>
+                    </div>
+                </div>
+            </form>
+            <input class="searchInput" type="text" placeholder="Search Countries :D" />
+        </section>
+        <section class="resultSection">
+            <div class="countryList"></div>
+        </section>
     </div>
     <script src="js/countries.js"></script>
     <script src="js/main.js"></script>
