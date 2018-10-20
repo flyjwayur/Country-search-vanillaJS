@@ -96,3 +96,6 @@ anyWordBtn.addEventListener("click", ()=>{
     let anyWord = "anyWord";
     searchCountries(countries, anyWord);
 });
+
+//As default, display all countries in arr
+displayCountriesDivs(countries);
