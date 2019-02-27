@@ -1,6 +1,6 @@
-# Search Countries by First name or any words
+# Search Countries by First letter or any words
 
 It's a time for utilizing the array & object methods.  
-It's an implemetation of search countries by first name OR any words of countries. 
+It is implemented with vanilla JS and css to search countries by first name OR any words of countries.
 
-* Demo : https://sunshine-coding.github.io/Search-Countries/
+- Demo : https://flyjwayur.github.io/Country-search-vanillaJS/
